@@ -1,0 +1,164 @@
+\documentclass{article}
+
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage[margin=0.5in]{geometry}
+%% Begin Doc
+\linespread{1} 
+\begin{document}
+\begin{multicols}{2}
+
+\section{Module 2}
+
+\normalsize
+The Coloumbic Force:
+\begin{equation*}
+    \begin{split}
+        \text{Fc} = \frac{-k_0(Z_1 q)(Z_2 q)}{a^2}
+    \end{split}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \item $Z$ is the valence of the charge ion
+    \item $q$ is electron charge ($0.16 \times 10^{-18}C$)
+    \item $k_0$ is proportionality ($9 \times 10^9 V \cdot m \cdot C^{-1}$)
+    \item $a$ is the distance between ion centres
+\end{enumerate}
+
+Coordination Number (CN):
+
+\begin{center}
+    \begin{tabular}{ l c c }
+        CN & $\frac{r}{R}$ min & $\frac{r}{R}$ max \\
+        \hline
+        2  &   0   & 0.155 \\ 
+        3  & 0.155 & 0.225 \\  
+        4  & 0.225 & 0.414 \\  
+        6  & 0.414 & 0.732 \\  
+        8  & 0.732 & 0.999 \\  
+        12 &   1   &   1
+    \end{tabular}
+\end{center}
+
+
+Bonding Energy:
+\begin{equation*}
+    \begin{split}
+        E = \int_\infty^a F \textit{da}  
+          = \int_\infty^a F_C \textit{da} + \int_\infty^a F_R \textit{da}
+    \end{split}
+\end{equation*}
+
+Percent Ionic Character:
+\begin{equation*}
+    \begin{split}
+        \%IC = (1-e^{-\frac{(X_A-X_B)^2}{4}}) \cdot 100\%
+    \end{split}
+\end{equation*}
+
+Reaction Enthalpy:
+\begin{equation*}
+    \begin{split}
+        \Delta H_{\textit{rxn}} = \sum B E_{\textit{reactants}} + \sum B E_{\textit{products}}
+    \end{split}
+\end{equation*}
+
+Thermal Expansion:
+\begin{equation*}
+    \begin{split}
+        \frac{\Delta L}{L_0} = \alpha (T_2 - T_1)
+    \end{split}
+\end{equation*}
+Note: Temperature is in Kelvin
+
+\section{Module 3}
+
+Atomic Packing:
+
+Atomic Packing Factor:
+\begin{equation*}
+    \begin{split}
+        \textit{APF} = \frac{V_\textit{Atoms in unit cell}}{V_\textit{Unit cell}} 
+    \end{split}
+\end{equation*}
+
+Table of Common Packings:
+\begin{center}
+    \begin{tabular}{ l c c }
+        Structure                    & CN & APF \\
+        \hline
+        Simple Cubic (SC)            & 6  & 1 \\ 
+        Body Centered Cubic (BCC)    & 8  & 2 \\  
+        Face Centered Cubic (FCC)    & 12 & 4 \\  
+        Hexagonal Close-Packed (HCP) & 12 & 6 \\  
+    \end{tabular}
+\end{center}
+
+Theoretical Density:
+\begin{equation*}
+    \begin{split}
+        \rho = \frac{m_\textit{Atoms in unit cell}}{V_\textit{Unit cell}} = \frac{n A}{V_C N_A}
+    \end{split}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \item $n$ is \# atoms in unit cell
+    \item $A$ is atomic weight
+    \item $V_C$ is volume of unit cell
+    \item $N_A$ is Avocado's number ($6.022 \times 10^{23}$)
+\end{enumerate}
+
+Ionic Packing:
+
+Ionic Packing Factor:
+\begin{equation*}
+    \begin{split}
+        \textit{IPF} = \frac{V_\textit{ions}}{V_\textit{Unit cell}} 
+    \end{split}
+\end{equation*}
+
+Table of Common Packings:
+\begin{center}
+    \begin{tabular}{ l c c }
+        Structure                    & CN  & $\frac{r}{R}$ range \\
+        \hline
+        Simple Cubic (MX)            & 8   & $[0.732, 1.0]$ \\ 
+        Face Centered Cubic 
+        (MX\textsubscript{2})        & 4/8 & $[, ]$ \\  
+    \end{tabular}
+\end{center}
+
+Theoretical Density:
+\begin{equation*}
+    \begin{split}
+        \rho 
+        = \frac{m_\textit{cell}}{V_\textit{cell}} 
+        = \frac{\sum m_{Ci} + \sum m_{Aj}}{V_{cell}}
+        = \frac{\sum n_{Ci}A_{Ci} + \sum n_{Aj}A_{Aj}}{V_{cell} N_A}
+    \end{split}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \item $n$ is \# of species in unit cell
+    \item $A$ is atomic weight
+    \item $V_C$ is volume of unit cell
+    \item $N_A$ is Avocado's number ($6.022 \times 10^{23}$)
+\end{enumerate}
+
+Semiconductors:
+
+Table of Common Packings:
+\begin{center}
+    \begin{tabular}{ l c c c }
+        Structure        & CN & Ions Per Cell \\
+        \hline
+        Diamond Cubic    & 4  & 8 \\ 
+        Zinc Blende      & 4  & 4/4 \\  
+    \end{tabular}
+\end{center}
+
+Describing Crystal Structures:
+
+\end{multicols}
+\end{document}
