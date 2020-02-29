@@ -1,11 +1,13 @@
 \documentclass{article}
 
+\usepackage{mathtools}
+\usepackage{amssymb}
 \usepackage{lipsum}
 \usepackage{multicol}
 \usepackage{amsmath}
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=0.2in]{geometry}
 %% Begin Doc
-\linespread{1} 
+\linespread{0.4} 
 \begin{document}
 \begin{multicols}{2}
 
@@ -15,14 +17,27 @@
 The Coloumbic Force:
 \begin{equation*}
     \begin{split}
-        \text{Fc} = \frac{-k_0(Z_1 q)(Z_2 q)}{a^2}
+        F_C = \frac{-k_0(Z_1 q)(Z_2 q)}{a^2}
     \end{split}
 \end{equation*}
 Where:
 \begin{enumerate}
+    \setlength\itemsep{-0.5em}
     \item $Z$ is the valence of the charge ion
     \item $q$ is electron charge ($0.16 \times 10^{-18}C$)
     \item $k_0$ is proportionality ($9 \times 10^9 V \cdot m \cdot C^{-1}$)
+    \item $a$ is the distance between ion centres
+\end{enumerate}
+The Repulsive Force:
+\begin{equation*}
+    \begin{split}
+        F_R = \lambda e^{\frac{-a}{p}}
+    \end{split}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \setlength\itemsep{-0.5em}
+    \item $\lambda$ \& $p$ are given constants 
     \item $a$ is the distance between ion centres
 \end{enumerate}
 
@@ -85,13 +100,13 @@ Atomic Packing Factor:
 
 Table of Common Packings:
 \begin{center}
-    \begin{tabular}{ l c c }
-        Structure                    & CN & APF \\
+    \begin{tabular}{ l c c c }
+        Structure                    & CN & APV & APF\\
         \hline
-        Simple Cubic (SC)            & 6  & 1 \\ 
-        Body Centered Cubic (BCC)    & 8  & 2 \\  
-        Face Centered Cubic (FCC)    & 12 & 4 \\  
-        Hexagonal Close-Packed (HCP) & 12 & 6 \\  
+        Simple Cubic (SC)            & 6  & 1   & $\frac{(1)(\frac{4}{3} \pi (\frac{a}{2})^3)}{a^3}; R = \frac{a}{2}$\\ 
+        Body Cent. Cubic (BCC)       & 8  & 2   & $\frac{(2)(\frac{4}{3} \pi (\frac{\sqrt{3}a}{4})^3)}{a^3}; R = \frac{\sqrt{3}}{4}a; l=\sqrt{3}a$\\  
+        Face Cent. Cubic (FCC)       & 12 & 4   & $\frac{(4)(\frac{4}{3} \pi (\frac{\sqrt{2}a}{4})^3)}{a^3}; R = \frac{\sqrt{2}}{4}a$\\  
+        Hex. Close-Packed (HCP)      & 12 & 2   & $\frac{(2)(\frac{4}{3} \pi (\frac{a}{2})^3)}{A_{base} c}; A_{base} = \frac{\sqrt{3}}{2}a^2; R = \frac{a}{2}; c = \sqrt{\frac{8}{3}}a$\\  
     \end{tabular}
 \end{center}
 
@@ -103,12 +118,12 @@ Theoretical Density:
 \end{equation*}
 Where:
 \begin{enumerate}
+    \setlength\itemsep{-0.5em}
     \item $n$ is \# atoms in unit cell
     \item $A$ is atomic weight
     \item $V_C$ is volume of unit cell
     \item $N_A$ is Avocado's number ($6.022 \times 10^{23}$)
 \end{enumerate}
-
 Ionic Packing:
 
 Ionic Packing Factor:
@@ -124,7 +139,7 @@ Table of Common Packings:
         Structure                    & CN  & $\frac{r}{R}$ range \\
         \hline
         Simple Cubic (MX)            & 8   & $[0.732, 1.0]$ \\ 
-        Face Centered Cubic 
+        Face Cent. Cubic 
         (MX\textsubscript{2})        & 4/8 & $[, ]$ \\  
     \end{tabular}
 \end{center}
@@ -140,12 +155,12 @@ Theoretical Density:
 \end{equation*}
 Where:
 \begin{enumerate}
+    \setlength\itemsep{-0.5em}
     \item $n$ is \# of species in unit cell
     \item $A$ is atomic weight
     \item $V_C$ is volume of unit cell
     \item $N_A$ is Avocado's number ($6.022 \times 10^{23}$)
 \end{enumerate}
-
 Semiconductors:
 
 Table of Common Packings:
@@ -157,8 +172,66 @@ Table of Common Packings:
         Zinc Blende      & 4  & 4/4 \\  
     \end{tabular}
 \end{center}
-
 Describing Crystal Structures:
+
+Angle between Lattice Directions:
+
+\begin{equation*}
+    \begin{split}
+        |\vec{u}|\cdot|\vec{v}|\cos(\theta) = \vec{u}\cdot\vec{v}
+    \end{split}
+\end{equation*}
+
+Determining Lattice Planes:
+
+\begin{enumerate}
+    \setlength\itemsep{-0.5em}
+    \item Read intercepts of plane in \textit{a, b, c}
+    \item Take reciprocals, Reduce to integers
+\end{enumerate}
+
+Bragg's Law:
+\begin{equation*}
+    \begin{split}
+        n\lambda = 2d\sin\theta_{hkl}
+    \end{split}
+\end{equation*}
+Where:
+\begin{enumerate}
+    \setlength\itemsep{-0.5em}
+    \item $\theta$ Bragg's Angle = $\frac{1}{2}\times$ Diffraction Angle
+    \item $d$ Interplanar Spacing
+    \item $\lambda$ Radiation Wavelength
+    \item $n$ order of reflection $n \in \mathbb{Z}$
+\end{enumerate}
+
+D-Spacing (Cubic):
+\begin{equation*}
+    \begin{split}
+        d_{hkl}=\frac{a}{\sqrt{h^2+k^2+l^2}}
+    \end{split}
+\end{equation*}
+
+Prediction of XRD patterns:
+
+Table of Common pattern prediction:
+\begin{center}
+    \begin{tabular}{ l c c c c c c c }
+        Peak Order & h & k & l & $h^2 + k^2 + l^2$ & SC & BCC & FCC \\
+        \hline
+        1 & 1 & 0 & 0 & 1 & $\checkmark$ & $\times$     & $\times$ \\
+        2 & 1 & 1 & 0 & 2 & $\checkmark$ & $\checkmark$ & $\times$ \\
+        3 & 1 & 1 & 1 & 3 & $\checkmark$ & $\times$     & $\checkmark$ \\
+        4 & 2 & 0 & 0 & 4 & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+        5 & 2 & 1 & 0 & 5 & $\checkmark$ & $\times$     & $\times$ \\
+        6 & 2 & 1 & 1 & 6 & $\checkmark$ & $\checkmark$ & $\times$ \\
+        7 & 2 & 2 & 0 & 8 & $\checkmark$ & $\times$     & $\checkmark$ \\
+    \end{tabular}
+\end{center}
+SC:  $(100), (110), (111)$\\
+BCC: $(110), (200), (211)$\\
+FCC: $(111), (200), (220)$
+
 
 \end{multicols}
 \end{document}
