@@ -1,0 +1,150 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage[margin=0.5in]{geometry}
+%% Begin Doc
+\begin{document}
+\Huge
+Lecture 13
+
+\normalsize
+
+
+\section{Thermal Activation At The Atomic Scale}
+
+\begin{equation}
+    \begin{split}
+        \textit{rate} = C e^{\frac{-q}{kt}}
+    \end{split}
+\end{equation}
+
+\begin{enumerate}
+    \item $q=Q/N_{AV}$: The activation energy of per atomic scale, J or eV
+    \item $k = R/N_{AV}$: Boltzmann's Constant, $13.81 \times 10^{-24}J/K$ or $82.2 \times 10^{-6}eV/K$
+    \item $C, R, T$ are defined as in last equation of last lecture
+\end{enumerate}
+
+\ce{Mg + O2 ->[k] MgO}
+
+\begin{multline}
+    k = C e^{\frac{-q}{kt}} \\
+    Q = ? \\
+    \SI{300}{\celsius} -> T_1 = \SI{573}{\kelvin} \\
+    k_{300} = C e^{\frac{-q}{kt_1}} \\
+    \SI{600}{\celsius} -> T_1 = \SI{873}{\kelvin} \\
+    k_{300} = C e^{\frac{-q}{kt_1}} \\ 
+    \frac{k_{300}}{k_{600}} = e^{\frac{-Q}{k}(\frac{1}{T_1} - \frac{1}{T_2})} \\
+    k = 8.314 J/mol h
+\end{multline}
+
+\section{Thermal Production of different point Defects}
+
+\begin{equation}
+    \begin{split}
+        \frac{n_\textit{defects}}{n_\textit{sites}} = C e^{-\frac{E_\textit{defect}}{kT}}
+    \end{split}
+\end{equation}
+
+Example 5.2
+
+\begin{multline}
+    \frac{n_v}{n_{sites}} = C  C e^{-\frac{E_v}{kT}} \\ 
+    T_1 = \SI{600}{\celsius} = \SI{873}{\kelvin} \\
+    T_2 = \SI{660}{\celsius} = \SI{933}{\kelvin} \\
+    \frac{\frac{n_v}{n_s}_{660}}{\frac{n_v}{n_s}_{600}} = e^{-\frac{E_v}{k}(\frac{1}{T_2}- \frac{1}{T_1})}
+    (\frac{n_v}{n_s})_{660}  = 8.82 \times 10 ^{-4}
+\end{multline}
+
+\section{Solid-State Diffusion Models}
+\begin{enumerate}
+    \item Atomic Migration: Atom migration occurs in a random walk though \textit{vacancy migration} and \textit{interstitial migration}
+    \item Interdiffusion: Diffusion will occur as a result of random walk and concentration will decrease on both sides of solid material
+\end{enumerate}
+
+Applications of Solid State Diffusion:
+\begin{itemize}
+    \item Case Hardening or Surface Hardening: Process of hardening surface while allowing the deeper layers to remain soft (Ex. Diffusing carbon into surface of iron)
+    \item Silicon Doping with P for \textit{n-type} or B for \textit{p-type} semiconductor
+\end{itemize}
+
+How do we quantify the amount or rate of diffusion?
+
+\textbf{Diffusive Flux}, J: the amoung og sibstance that will flow though and perpendiculat to a unit cross-sectional area during a unit time intervavl:
+\pagebreak
+\begin{equation}
+    \begin{split}
+        J = \frac{M}{At}
+    \end{split}
+\end{equation}
+\begin{itemize}
+    \item $J$: Diffusive Flux, $kg/m^2$, $\textit{mol}/m^2$, or $\textit{atoms}/m^2$
+    \item $M$: mass diffused, kg, mols, atoms
+    \item $A$: the cross-sectional area of diffusion, $m^2$
+    \item $t$: time elapsed, seconds
+\end{itemize}
+In differential form:
+\begin{equation}
+    \begin{split}
+        J = \frac{1}{A}\frac{dM}{dt}
+    \end{split}
+\end{equation}
+
+Measurement of diffusion flux:
+\begin{itemize}
+    \item make a thin film (membrane) of cross-sectional area
+    \item Impose a concentration gradient
+    \item Measure the amount of atoms diffused over time
+\end{itemize}
+
+\section{Flick's $1^{st}$ Law}
+\begin{itemize}
+    \item Assumption: The diffusion flux does not change over time or a steady state condition exists
+    \item Flux is proportional to the negative concentration gradient $=-\frac{\partial c}{\partial x} $
+\end{itemize}
+
+\begin{equation}
+    \begin{split}
+        J = D\frac{\partial c}{\partial x}
+    \end{split}
+\end{equation}
+
+\section{Flick's Second Law}
+
+\begin{itemize}
+    \item Non-steady-state diffusion: The concentration of diffusing species is a funciton of both time and position $c = c(x,t)$
+\end{itemize}
+
+We use the following equation:
+
+\begin{equation}
+    \begin{split}
+        \frac{\partial c_x}{\partial t} = D \frac{\partial^2 c_x}{\partial x^2}
+    \end{split}
+\end{equation}
+
+Steady-state diffusion across a thin plate:
+\begin{itemize}
+    \item One common example of s.s diffusion is the diffusion of atoms of a gas though a plate of metal(or other materials) for which the concentration(or pressure) of the diffusing species of both sirfaces of the plate are held constant. The concentration distribution of inside the plate becomes inchanged after a certain amount of time reaching a s.s.
+    \item Flick's First law in s.s becomes: \\
+    
+    \begin{equation}
+        \begin{split}
+            \frac{\partial c}{\partial x} = \frac{\Delta c}{\Delta x}  = \frac{c_h - c_l}{0-x_0} = - \frac{c_h - c_l}{x_0}
+        \end{split}
+    \end{equation}
+\end{itemize}
+
+Example:
+
+\begin{equation}
+    \begin{split}
+    J &= -D\frac{\partial c}{\partial x} = \frac{\Delta c}{\Delta x} \\
+    &= -D \frac{c_2-c_1}{x_2-x_1} \\
+    &= 6.20 \times 10^{-11} m^2/s \times \frac{0.8-1.2}{(10mm -5mm) \times 10^{-3}} \\
+    &= 5.0\times 10^{-9} kg/m^2 s 
+\end{split}
+\end{equation}
+
+\end{document}
