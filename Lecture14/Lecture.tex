@@ -1,0 +1,197 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage[margin=0.5in]{geometry}
+%% Begin Doc
+\begin{document}
+\Huge
+Lecture 14
+
+\normalsize
+
+\section{Diffusion into semi-finite solids}
+
+Diffusion into a solid that has a finite face and an infinite body.
+
+THe solution for this is:
+\begin{equation}
+    \begin{split}
+        \frac{c_x -c_0}{c_s - c_0} = 1 - \textit{erf}(\frac{x}{2\sqrt{Dt}})
+    \end{split}
+\end{equation}
+Where:
+\begin{enumerate}
+    \item $t$ is the diffusion time
+    \item $x$ is the position
+    \item $c_x$ the concentration of the diffusing species
+    \item $c_s$ surface concentration of diffusing species
+    \item $c_0$ the initial bulk concentration
+\end{enumerate}
+
+Example 5.4:
+
+\begin{equation}
+    \begin{split}
+    c_x &= 0.6\% \\
+    c_0 &= 0.2\% \\
+    c_s &= 1.0\% \\
+    X &= 1\text{mm} \\
+    \frac{c_x-c_0}{c_s-c_0} &= 0.5 \\
+    D &= 2.98 \times 10^{-11} \frac{m^2}{s}
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \frac{c_x -c_0}{c_s - c_0} &= 1 - \textit{erf}(\frac{x}{2\sqrt{Dt}}) \\
+        \textit{erf}(\frac{x}{2\sqrt{Dt}}) &= 1 - \frac{c_x -c_0}{c_s - c_0} \\ 
+        &= 0.5 \\
+        t &= 3.68\times 10^4s
+    \end{split}
+\end{equation}
+
+Example 5.5:
+
+Recalculate above with master plot:
+
+\begin{equation}
+    \begin{split}
+        \frac{c_x -c_0}{c_s - c_0} &= 0.5 \\
+        \Rightarrow \frac{x}{\sqrt{Dt}} &= 0.95 \\
+        \Rightarrow t &= 3.72\times 10^4s
+    \end{split}
+\end{equation}
+
+
+\section{Diffusivity Equations}
+
+\begin{equation}
+    \begin{split}
+        D = D_0 E^{\frac{-Q}{RT}}
+    \end{split}
+\end{equation}
+Where:
+\begin{enumerate}
+    \item $D_0$ preexponential constant
+    \item $Q$ the activation energy per mole of diffusing species or for the motion of one diffusing species (J/mol, J, or eV)
+    \item $R$ the universal gas constant
+    \item $T$ the absolute temperature
+\end{enumerate}
+In general diffusion occurs faster in BCC than in FCC structure.
+
+We can also have diffusivity data for non-metals. Note that for non-metals the diffusivity rate is many orders of magnitude lower than that of metals.
+
+Example 5.6:
+
+\begin{equation}
+    \begin{split}
+        D &= D_0 E^{\frac{-Q}{RT}} \\
+        D_0 &= 20 \times 10^{-6} \\
+        Q &= 1.42 \times 10^5 \\
+        D &= ?
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \frac{c_x -c_0}{c_s - c_0} &= 1 - \textit{erf}(\frac{x}{2\sqrt{Dt}}) \\
+        \frac{0.35-0.20}{1-0.2} &= 1 - \textit{erf}(\frac{4 \text{mm}}{2\sqrt{D(49.5\text{hours})}}) \\
+        \Rightarrow D &= 2.6 \times 10^{-11} \frac{m^2}{s} \\
+        T &= \frac{Q}{k ( \ln D_0 - \ln D)} \\
+        &= \SI{1260.2}{\kelvin}
+    \end{split}
+\end{equation}
+
+\section{Diffusion in Semiconducting Materials}
+We need to be able to dope our semiconductos to yeild special electronic properties.
+
+\begin{enumerate}
+    \item Pre-Deposition
+    \begin{itemize}
+        \item Impurity atoms (e.g. P or B) are diffusted into silicon often from a gas phase. \SI{900}{\celsius} to \SI{1000}{\celsius}
+        \item The concentration of the dopant in gas phase and at silicon surface are kept constant
+        \item Semi-infinite diffusion model can be applied.
+    \end{itemize}
+    \item Drive-in Diffusion
+    \begin{itemize}
+        \item This treatment is used to transport atoms farther into stilicon to provide more suitable concentration distribution without increasing impurity content
+        \item Temperature is increased upto \SI{1200}{\celsius}
+        \item Treatment applies a \ce{SiO2} layer to prevent escape of impurity.
+    \end{itemize}
+\end{enumerate}
+
+\section{Drive-in Diffusion}
+\begin{enumerate}
+    \item The impurity atoms introduced are confined to a very thin layer of the silicon
+    \item Then the solution to Flick's second law is:
+    \begin{equation}
+        \begin{split}
+            C(x,t) = \frac{Q_0}{\sqrt{\pi D_d t}}e^{\frac{-x^2}{4D_d t}}
+        \end{split}
+    \end{equation}
+    Where:
+    \begin{itemize}
+        \item $C(x,t)$ is the impurity concentration at position and time.
+        \item $D_d$ is the diffusion coefficient in the drive-in step
+        \item $Q_0$ is the total amount of impurities per unity area in the solid that were introduced during the pre-deposition treatment which is:
+        \begin{equation}
+            \begin{split}
+                Q_0 - 2 C_s \sqrt{\frac{D_p t_p}{\pi}}
+            \end{split}
+        \end{equation}
+        Where
+        \begin{itemize}
+            \item $C_s$ is the surface concentration for the pre-deposition step
+            \item $D_p$ is the diffusion coefficient in the pre-deposition step
+            \item $t_p$ is the pre-deposition treatment time
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+
+Junction Depth, $x_j$: The Depth at which tht ediffusing impurity concentration is just equal to the background concentration of that impurity in the silicon.
+
+\begin{equation}
+    \begin{split}
+        x_j = \sqrt{(4D_d t_d)\ln(\frac{Q_0}{C_B \sqrt{\pi D_d t_d}})}
+    \end{split}
+\end{equation}
+
+Example 5.7:
+
+a)
+\begin{equation}
+    \begin{split}
+        Q_0 &= 2C_s\sqrt{\frac{D_p t_p}{\pi}} = 3.44 \times 10^{18} \frac{\text{atoms}}{m^2} \\
+        t_p &= 30\text{mm} \times 60 \frac{s}{m} \\
+        C_s &= 3 \times 10^{26} \\
+        D_p &= D_0 e^{\frac{-q}{kt}} \\
+        &= 5.73 \times 10^{-20} \frac{m^2}{s}
+    \end{split}
+\end{equation}
+
+b)
+\begin{equation}
+    \begin{split}
+        x_j &= \sqrt{(4 D_d t_d) \ln (\frac{Q_0}{C_B \sqrt{\pi D_d t_d}})} \\ 
+        &= 2.19 \times 10^{-6} m \\
+        &= 2.19 \mu m
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        D_d = D_0 e^{\frac{q}{kT_d}} = 1.51 \times 10^{-17}\frac{m^2}{s}
+    \end{split}
+\end{equation}
+
+c)
+\begin{equation}
+    \begin{split}
+        C(x, t) = \frac{Q_0}{\sqrt{\pi D_d t}} e^{\frac{-x^2}{4D_d t}} = 5.90 \times 10^23 \frac{\text{atoms}}{m^3}
+    \end{split}
+\end{equation}
+
+\end{document}
