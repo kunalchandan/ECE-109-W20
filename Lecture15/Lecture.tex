@@ -1,0 +1,98 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage[margin=0.5in]{geometry}
+%% Begin Doc
+\begin{document}
+\Huge
+Lecture 15
+
+\normalsize
+
+Diffusivity is dependant on the structure of the region.
+In general $D_\text{volume} < D_\text{gran boundary} < D_\text{surface}$
+
+Example 5.8
+\begin{equation}
+    \begin{split}
+        \frac{C_x -C_0}{C_s-C_0} = 1 - erf(\frac{x}{2\sqrt{Dt}})
+    \end{split}
+\end{equation}
+a)
+\begin{equation}
+    \begin{split}
+        C_x &= 0.01 C_s \\
+        C_0 &= 0 \\
+        \frac{0.01 C_s}{C_s} &= 0.01 \\
+        erf(\frac{x}{2\sqrt{D_0t}}) &= 0.99 \\
+        \frac{x}{2D_0t} &= 1.824 \\
+        x &= 2.19 \times 10^{-3} m \\
+        &= 2.19 mm
+    \end{split}
+\end{equation}
+b)
+\begin{equation}
+    \begin{split}
+        erf(\frac{x}{2\sqrt{D_v t}}) &= 0.99 \\
+        x &= 2.19 \times 10^{-5} m \\
+        &= 21.9 \mu m
+    \end{split}
+\end{equation}
+
+\section{Module 6: Band theory and Electrical Properties}
+
+\subsection{Electrical Conduction}
+Ohm's Law: $ I = \frac{V}{R} $
+
+Resistivity: Inherent property of material: $\rho = \frac{RA}{l}$
+
+Conductivity: Inverse of Resistivity: $\sigma = \frac{1}{\rho}$
+
+\subsection{Charge Carrier Mobility, \mu}
+\begin{itemize}
+    \item Charge Carriers
+    \begin{itemize}
+        \item An electron in a metal
+        \item An electron or electron hole in a semiconductor
+        \item An ion in an ionic solid or salt solution
+    \end{itemize}
+    \item Charge Carrier mobility
+    \begin{itemize}
+        \item The Carrier mobility characterizes how quickly (drift velocity $v_d$) a carrier can move though a metal or semiconductor when pulled by an E field.
+        \item $\mu = \frac{v_d}{E}$
+    \end{itemize}
+    \item Relationship between conductivity and mobility
+    \begin{itemize}
+        \item $\sigma = nq\mu$
+        \item $n$ the density of charge carriers
+        \item $q$ the charge carried by each carrier
+        \item $\mu$ the mobility of each carrier
+    \end{itemize}
+    \item When both positive and negative charge carriers contribute to conduction
+    \begin{itemize}
+        \item $\sigma = n_e q_e\mu_e + n_p q_p\mu_p$
+    \end{itemize}
+\end{itemize}
+
+Example 6.1
+\begin{equation}
+    \begin{split}
+        \sigma = nq\mu \\
+        n = \frac{\sigma}{q\mu} = \frac{58 \times 10^{6}\Omega^{-1} m^{-1}}{0.16\times 10^{-18}C \times 3.5 \times 10^{-3}\frac{m^2}{vs}} = 1.04 \times 10^{29} m^{-3} \\
+        n_{Cu} = \frac{\rho}{A_{An}}\times N_A = \frac{8.969/\text{cm}^3 \times 10^6 \frac{cm^3}{nm^3}}{63.5 \frac{g}{mol}}\times 6.022 \times 10^{23} \frac{\text{atoms}}{\text{mol}} = 0.84 \times 10^{29} Cu \frac{\text{atoms}}{\text{m}^3} \\
+        \frac{n}{n_{Cu}} = \frac{1.04}{0.84} = 1.24
+    \end{split}
+\end{equation}
+
+\subsection{Electron States and Energy bands in solids}
+In Module 2 we learned about electron structure in single atoms, the same Pauli Exclusion Principle must be applied to multiple atoms.
+
+
+
+\begin{equation}
+    \begin{split}
+    \end{split}
+\end{equation}
+\end{document}
